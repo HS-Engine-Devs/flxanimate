@@ -132,7 +132,7 @@ class AnimationData
 
 		for (filter in filters)
 		{
-			bitmapFilter.unshift(filterFromString(MacroAnimationData.getFieldBool(filter, ["N", "name"]), filter));
+			bitmapFilter.unshift(filterFromString(getFieldBool(filter, ["N", "name"]), filter));
 		}
 
 		return bitmapFilter;
@@ -301,17 +301,17 @@ abstract AnimAtlas({}) from {}
 
 	function get_AN():Animation
 	{
-		return MacroAnimationData.getFieldBool(this, ["AN", "ANIMATION"]);
+		return AnimationData.getFieldBool(this, ["AN", "ANIMATION"]);
 	}
 
 
 	function get_MD():MetaData
 	{
-		return MacroAnimationData.getFieldBool(this, ["MD", "metadata"]);
+		return AnimationData.getFieldBool(this, ["MD", "metadata"]);
 	}
 	function get_SD()
 	{
-		return MacroAnimationData.getFieldBool(this, ["SD", "SYMBOL_DICTIONARY"]);
+		return AnimationData.getFieldBool(this, ["SD", "SYMBOL_DICTIONARY"]);
 	}
 }
 /**
@@ -327,7 +327,7 @@ abstract SymbolDictionary({}) from {}
 
 	function get_S():Array<SymbolData>
 	{
-		return MacroAnimationData.getFieldBool(this, ["S", "Symbols"]);
+		return AnimationData.getFieldBool(this, ["S", "Symbols"]);
 	}
 }
 @:forward
@@ -348,11 +348,11 @@ abstract Animation(SymbolData) from {}
 
 	function get_N():String
 	{
-		return MacroAnimationData.getFieldBool(this, ["N", "name"]);
+		return AnimationData.getFieldBool(this, ["N", "name"]);
 	}
 	function get_STI()
 	{
-		return MacroAnimationData.getFieldBool(this, ["STI", "StageInstance"]);
+		return AnimationData.getFieldBool(this, ["STI", "StageInstance"]);
 	}
 }
 /**
@@ -370,7 +370,7 @@ abstract StageInstance({})
 
 	function get_SI():SymbolInstance
 	{
-		return MacroAnimationData.getFieldBool(this, ["SI", "SYMBOL_Instance"]);
+		return AnimationData.getFieldBool(this, ["SI", "SYMBOL_Instance"]);
 	}
 }
 /**
@@ -389,11 +389,11 @@ abstract SymbolData({}) from {}
 
 	function get_SN():String
 	{
-		return MacroAnimationData.getFieldBool(this, ["SN", "SYMBOL_name"]);
+		return AnimationData.getFieldBool(this, ["SN", "SYMBOL_name"]);
 	}
 	function get_TL():Timeline
 	{
-		return MacroAnimationData.getFieldBool(this, ["TL", "TIMELINE"]);
+		return AnimationData.getFieldBool(this, ["TL", "TIMELINE"]);
 	}
 }
 /**
@@ -409,7 +409,7 @@ abstract Timeline({}) from {}
 
 	function get_L():Array<Layers>
 	{
-		return MacroAnimationData.getFieldBool(this, ["L", "LAYERS"]);
+		return AnimationData.getFieldBool(this, ["L", "LAYERS"]);
 	}
 }
 /**
@@ -437,19 +437,19 @@ abstract Layers({}) from {}
 
 	function get_LN():String
 	{
-		return MacroAnimationData.getFieldBool(this, ["LN", "Layer_name"]);
+		return AnimationData.getFieldBool(this, ["LN", "Layer_name"]);
 	}
 	function get_LT():String
 	{
-		return MacroAnimationData.getFieldBool(this, ["LT", "Layer_type"]);
+		return AnimationData.getFieldBool(this, ["LT", "Layer_type"]);
 	}
 	function get_Clpb():String
 	{
-		return MacroAnimationData.getFieldBool(this, ["Clpb", "Clipped_by"]);
+		return AnimationData.getFieldBool(this, ["Clpb", "Clipped_by"]);
 	}
 	function get_FR():Array<Frame>
 	{
-		return MacroAnimationData.getFieldBool(this, ["FR", "Frames"]);
+		return AnimationData.getFieldBool(this, ["FR", "Frames"]);
 	}
 }
 /**
@@ -470,11 +470,11 @@ abstract MetaData({}) from {}
 
 	function get_FRT()
 	{
-		return MacroAnimationData.getFieldBool(this, ["FRT", "framerate"]);
+		return AnimationData.getFieldBool(this, ["FRT", "framerate"]);
 	}
 	function get_V()
 	{
-		return MacroAnimationData.getFieldBool(this, ["V", "version"]);
+		return AnimationData.getFieldBool(this, ["V", "version"]);
 	}
 }
 /**
@@ -514,29 +514,29 @@ abstract Frame({}) from {}
 
 	function get_N():String
 	{
-		return MacroAnimationData.getFieldBool(this, ["N", "name"]);
+		return AnimationData.getFieldBool(this, ["N", "name"]);
 	}
 	function get_I():Int
 	{
-		return MacroAnimationData.getFieldBool(this, ["I", "index"]);
+		return AnimationData.getFieldBool(this, ["I", "index"]);
 	}
 	function get_DU():Int
 	{
-		return MacroAnimationData.getFieldBool(this, ["DU", "duration"]);
+		return AnimationData.getFieldBool(this, ["DU", "duration"]);
 	}
 	function get_E():Array<Element>
 	{
-		return MacroAnimationData.getFieldBool(this, ["E", "elements"]);
+		return AnimationData.getFieldBool(this, ["E", "elements"]);
 	}
 	function get_C()
 	{
-		return MacroAnimationData.getFieldBool(this, ["C", "color"]);
+		return AnimationData.getFieldBool(this, ["C", "color"]);
 	}
 
 
 	function get_F()
 	{
-		return MacroAnimationData.getFieldBool(this, ["F", "filters"]);
+		return AnimationData.getFieldBool(this, ["F", "filters"]);
 	}
 }
 /**
@@ -553,7 +553,7 @@ abstract Element(StageInstance)
 
 	function get_ASI():AtlasSymbolInstance
 	{
-		return MacroAnimationData.getFieldBool(this, ["ASI", "ATLAS_SPRITE_instance"]);
+		return AnimationData.getFieldBool(this, ["ASI", "ATLAS_SPRITE_instance"]);
 	}
 }
 /**
@@ -627,70 +627,70 @@ abstract SymbolInstance({}) from {}
 
 	function get_SN()
 	{
-		return MacroAnimationData.getFieldBool(this, ["SN", "SYMBOL_name"]);
+		return AnimationData.getFieldBool(this, ["SN", "SYMBOL_name"]);
 	}
 
 
 	function get_IN()
 	{
-		return MacroAnimationData.getFieldBool(this, ["IN", "Instance_Name"]);
+		return AnimationData.getFieldBool(this, ["IN", "Instance_Name"]);
 	}
 
 
 	function get_ST()
 	{
-		return MacroAnimationData.getFieldBool(this, ["ST", "symbolType"]);
+		return AnimationData.getFieldBool(this, ["ST", "symbolType"]);
 	}
 
 
 	function get_bitmap()
 	{
-		return MacroAnimationData.getFieldBool(this, ["BM", "bitmap"]);
+		return AnimationData.getFieldBool(this, ["BM", "bitmap"]);
 	}
 
 	function get_B()
 	{
-		return MacroAnimationData.getFieldBool(this, ["B", "blend"]);
+		return AnimationData.getFieldBool(this, ["B", "blend"]);
 	}
 
 	function get_FF()
 	{
-		var ff:Null<Int> = MacroAnimationData.getFieldBool(this, ["FF", "firstFrame"]);
+		var ff:Null<Int> = AnimationData.getFieldBool(this, ["FF", "firstFrame"]);
 		return (ff == null) ? 0 : ff;
 	}
 
 
 	function get_LP()
 	{
-		return MacroAnimationData.getFieldBool(this, ["LP", "loop"]);
+		return AnimationData.getFieldBool(this, ["LP", "loop"]);
 	}
 
 
 	function get_TRP()
 	{
-		return MacroAnimationData.getFieldBool(this, ["TRP", "transformationPoint"]);
+		return AnimationData.getFieldBool(this, ["TRP", "transformationPoint"]);
 	}
 
 
 	function get_M3D()
 	{
-		return MacroAnimationData.getFieldBool(this, ["M3D", "Matrix3D"]);
+		return AnimationData.getFieldBool(this, ["M3D", "Matrix3D"]);
 	}
 
 	function get_MX()
 	{
-		return MacroAnimationData.getFieldBool(this, ["MX", "Matrix"]);
+		return AnimationData.getFieldBool(this, ["MX", "Matrix"]);
 	}
 
 	function get_C()
 	{
-		return MacroAnimationData.getFieldBool(this, ["C", "color"]);
+		return AnimationData.getFieldBool(this, ["C", "color"]);
 	}
 
 
 	function get_F()
 	{
-		return MacroAnimationData.getFieldBool(this, ["F", "filters"]);
+		return AnimationData.getFieldBool(this, ["F", "filters"]);
 	}
 }
 abstract ColorEffects({}) from {}
@@ -729,51 +729,51 @@ abstract ColorEffects({}) from {}
 
 	function get_M()
 	{
-		return MacroAnimationData.getFieldBool(this, ["M", "mode"]);
+		return AnimationData.getFieldBool(this, ["M", "mode"]);
 	}
 	function get_TC()
 	{
-		return MacroAnimationData.getFieldBool(this, ["TC", "tintColor"]);
+		return AnimationData.getFieldBool(this, ["TC", "tintColor"]);
 	}
 	function get_TM()
 	{
-		return MacroAnimationData.getFieldBool(this, ["TM", "tintMultiplier"]);
+		return AnimationData.getFieldBool(this, ["TM", "tintMultiplier"]);
 	}
 	function get_AM()
 	{
-		return MacroAnimationData.getFieldBool(this, ["AM", "alphaMultiplier"]);
+		return AnimationData.getFieldBool(this, ["AM", "alphaMultiplier"]);
 	}
 	function get_AO()
 	{
-		return MacroAnimationData.getFieldBool(this, ["AO", "AlphaOffset"]);
+		return AnimationData.getFieldBool(this, ["AO", "AlphaOffset"]);
 	}
 	function get_RM()
 	{
-		return MacroAnimationData.getFieldBool(this, ["RM", "RedMultiplier"]);
+		return AnimationData.getFieldBool(this, ["RM", "RedMultiplier"]);
 	}
 	function get_RO()
 	{
-		return MacroAnimationData.getFieldBool(this, ["RO", "redOffset"]);
+		return AnimationData.getFieldBool(this, ["RO", "redOffset"]);
 	}
 	function get_GM()
 	{
-		return MacroAnimationData.getFieldBool(this, ["GM", "greenMultiplier"]);
+		return AnimationData.getFieldBool(this, ["GM", "greenMultiplier"]);
 	}
 	function get_GO()
 	{
-		return MacroAnimationData.getFieldBool(this, ["GO", "greenOffset"]);
+		return AnimationData.getFieldBool(this, ["GO", "greenOffset"]);
 	}
 	function get_BM()
 	{
-		return MacroAnimationData.getFieldBool(this, ["BM", "blueMultiplier"]);
+		return AnimationData.getFieldBool(this, ["BM", "blueMultiplier"]);
 	}
 	function get_BO()
 	{
-		return MacroAnimationData.getFieldBool(this, ["BO", "blueOffset"]);
+		return AnimationData.getFieldBool(this, ["BO", "blueOffset"]);
 	}
 	function get_BRT()
 	{
-		return MacroAnimationData.getFieldBool(this, ["BRT", "Brightness"]);
+		return AnimationData.getFieldBool(this, ["BRT", "Brightness"]);
 	}
 }
 abstract Filters({})
@@ -792,11 +792,11 @@ abstract Filters({})
 
 	function get_ACF()
 	{
-		return MacroAnimationData.getFieldBool(this, ["ACF", "AdjustColorFilter"]);
+		return AnimationData.getFieldBool(this, ["ACF", "AdjustColorFilter"]);
 	}
 	function get_GF()
 	{
-		return MacroAnimationData.getFieldBool(this, ["GF"]);
+		return AnimationData.getFieldBool(this, ["GF"]);
 	}
 }
 /**
@@ -824,19 +824,19 @@ abstract AdjustColorFilter({})
 
 	function get_BRT()
 	{
-		return MacroAnimationData.getFieldBool(this, ["BRT", "brightness"]);
+		return AnimationData.getFieldBool(this, ["BRT", "brightness"]);
 	}
 	function get_CT()
 	{
-		return MacroAnimationData.getFieldBool(this, ["CT", "contrast"]);
+		return AnimationData.getFieldBool(this, ["CT", "contrast"]);
 	}
 	function get_SAT()
 	{
-		return MacroAnimationData.getFieldBool(this, ["SAT", "saturation"]);
+		return AnimationData.getFieldBool(this, ["SAT", "saturation"]);
 	}
 	function get_H()
 	{
-		return MacroAnimationData.getFieldBool(this, ["H", "hue"]);
+		return AnimationData.getFieldBool(this, ["H", "hue"]);
 	}
 }
 /**
@@ -861,15 +861,15 @@ abstract BlurFilter({})
 
 	function get_BLX()
 	{
-		return MacroAnimationData.getFieldBool(this, ["BLX", "blurX"]);
+		return AnimationData.getFieldBool(this, ["BLX", "blurX"]);
 	}
 	function get_BLY()
 	{
-		return MacroAnimationData.getFieldBool(this, ["BLY", "blurY"]);
+		return AnimationData.getFieldBool(this, ["BLY", "blurY"]);
 	}
 	function get_Q()
 	{
-		return MacroAnimationData.getFieldBool(this, ["Q", "quality"]);
+		return AnimationData.getFieldBool(this, ["Q", "quality"]);
 	}
 }
 
@@ -884,23 +884,23 @@ abstract GlowFilter(BlurFilter)
 
 	function get_C()
 	{
-		return MacroAnimationData.getFieldBool(this, ["C", "color"]);
+		return AnimationData.getFieldBool(this, ["C", "color"]);
 	}
 	function get_A()
 	{
-		return MacroAnimationData.getFieldBool(this, ["A", "alpha"]);
+		return AnimationData.getFieldBool(this, ["A", "alpha"]);
 	}
 	function get_STR()
 	{
-		return MacroAnimationData.getFieldBool(this, ["STR", "strength"]);
+		return AnimationData.getFieldBool(this, ["STR", "strength"]);
 	}
 	function get_KK()
 	{
-		return MacroAnimationData.getFieldBool(this, ["KK", "knockout"]);
+		return AnimationData.getFieldBool(this, ["KK", "knockout"]);
 	}
 	function get_IN()
 	{
-		return MacroAnimationData.getFieldBool(this, ["IN", "inner"]);
+		return AnimationData.getFieldBool(this, ["IN", "inner"]);
 	}
 }
 
@@ -913,15 +913,15 @@ abstract DropShadowFilter(GlowFilter)
 
 	function get_HO()
 	{
-		return MacroAnimationData.getFieldBool(this, ["HO", "hideObject"]);
+		return AnimationData.getFieldBool(this, ["HO", "hideObject"]);
 	}
 	function get_AL()
 	{
-		return MacroAnimationData.getFieldBool(this, ["AL", "angle"]);
+		return AnimationData.getFieldBool(this, ["AL", "angle"]);
 	}
 	function get_DST()
 	{
-		return MacroAnimationData.getFieldBool(this, ["DST", "distance"]);
+		return AnimationData.getFieldBool(this, ["DST", "distance"]);
 	}
 }
 
@@ -940,39 +940,39 @@ abstract BevelFilter(BlurFilter)
 
 	function get_SC()
 	{
-		return MacroAnimationData.getFieldBool(this, ["SC", "shadowColor"]);
+		return AnimationData.getFieldBool(this, ["SC", "shadowColor"]);
 	}
 	function get_SA()
 	{
-		return MacroAnimationData.getFieldBool(this, ["SA", "shadowAlpha"]);
+		return AnimationData.getFieldBool(this, ["SA", "shadowAlpha"]);
 	}
 	function get_HC()
 	{
-		return MacroAnimationData.getFieldBool(this, ["HC", "highlightColor"]);
+		return AnimationData.getFieldBool(this, ["HC", "highlightColor"]);
 	}
 	function get_HA()
 	{
-		return MacroAnimationData.getFieldBool(this, ["HA", "highlightAlpha"]);
+		return AnimationData.getFieldBool(this, ["HA", "highlightAlpha"]);
 	}
 	function get_STR()
 	{
-		return MacroAnimationData.getFieldBool(this, ["STR", "strength"]);
+		return AnimationData.getFieldBool(this, ["STR", "strength"]);
 	}
 	function get_KK()
 	{
-		return MacroAnimationData.getFieldBool(this, ["KK", "knockout"]);
+		return AnimationData.getFieldBool(this, ["KK", "knockout"]);
 	}
 	function get_AL()
 	{
-		return MacroAnimationData.getFieldBool(this, ["AL", "angle"]);
+		return AnimationData.getFieldBool(this, ["AL", "angle"]);
 	}
 	function get_DST()
 	{
-		return MacroAnimationData.getFieldBool(this, ["DST", "distance"]);
+		return AnimationData.getFieldBool(this, ["DST", "distance"]);
 	}
 	function get_TP()
 	{
-		return MacroAnimationData.getFieldBool(this, ["TP", "type"]);
+		return AnimationData.getFieldBool(this, ["TP", "type"]);
 	}
 }
 @:forward
@@ -988,27 +988,27 @@ abstract GradientFilter(BlurFilter)
 
 	function get_STR()
 	{
-		return MacroAnimationData.getFieldBool(this, ["STR", "strength"]);
+		return AnimationData.getFieldBool(this, ["STR", "strength"]);
 	}
 	function get_KK()
 	{
-		return MacroAnimationData.getFieldBool(this, ["KK", "knockout"]);
+		return AnimationData.getFieldBool(this, ["KK", "knockout"]);
 	}
 	function get_AL()
 	{
-		return MacroAnimationData.getFieldBool(this, ["AL", "angle"]);
+		return AnimationData.getFieldBool(this, ["AL", "angle"]);
 	}
 	function get_DST()
 	{
-		return MacroAnimationData.getFieldBool(this, ["DST", "distance"]);
+		return AnimationData.getFieldBool(this, ["DST", "distance"]);
 	}
 	function get_TP()
 	{
-		return MacroAnimationData.getFieldBool(this, ["TP", "type"]);
+		return AnimationData.getFieldBool(this, ["TP", "type"]);
 	}
 	function get_GE()
 	{
-		return MacroAnimationData.getFieldBool(this, ["GE", "GradientEntries"]);
+		return AnimationData.getFieldBool(this, ["GE", "GradientEntries"]);
 	}
 }
 
@@ -1021,15 +1021,15 @@ abstract GradientEntry({})
 
 	function get_R()
 	{
-		return MacroAnimationData.getFieldBool(this, ["R", "ratio"]);
+		return AnimationData.getFieldBool(this, ["R", "ratio"]);
 	}
 	function get_C()
 	{
-		return MacroAnimationData.getFieldBool(this, ["C", "color"]);
+		return AnimationData.getFieldBool(this, ["C", "color"]);
 	}
 	function get_A()
 	{
-		return MacroAnimationData.getFieldBool(this, ["A", "alpha"]);
+		return AnimationData.getFieldBool(this, ["A", "alpha"]);
 	}
 
 }
@@ -1055,11 +1055,11 @@ abstract Bitmap({}) from {}
 	public var POS(get, never):TransformationPoint;
 	function get_N()
 	{
-		return MacroAnimationData.getFieldBool(this, ["N", "name"]);
+		return AnimationData.getFieldBool(this, ["N", "name"]);
 	}
 	function get_POS()
 	{
-		return MacroAnimationData.getFieldBool(this, ["POS", "Position"]);
+		return AnimationData.getFieldBool(this, ["POS", "Position"]);
 	}
 }
 /**
@@ -1080,12 +1080,12 @@ abstract AtlasSymbolInstance(Bitmap) from {}
 
 	function get_M3D()
 	{
-		return MacroAnimationData.getFieldBool(this, ["M3D", "Matrix3D"]);
+		return AnimationData.getFieldBool(this, ["M3D", "Matrix3D"]);
 	}
 
 	function get_MX()
 	{
-		return MacroAnimationData.getFieldBool(this, ["MX", "Matrix"]);
+		return AnimationData.getFieldBool(this, ["MX", "Matrix"]);
 	}
 }
 

@@ -34,7 +34,7 @@ abstract Meta({var app:String; var version:String; var image:String; var format:
 
 	inline function get_resolution()
 	{
-		return MacroAnimationData.getFieldBool(this, ["resolution", "scale"]);
+		return AnimationData.getFieldBool(this, ["resolution", "scale"]);
 	}
 }
 
